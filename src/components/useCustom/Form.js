@@ -4,7 +4,11 @@ class FormInputsStateful extends React.Component {
     constructor(props) {
         super(props)
         this.state = { line1: "", line2:"", postalCode: "", StateCode:"", CountryCode:""  };
-   
+        this.handleChangeLine1 = this.handleChangeLine1.bind(this);
+        this.handleChangeLine2 = this.handleChangeLine2.bind(this);
+        this.handleChangePostalCode = this.handleChangePostalCode.bind(this);
+        this.handleChangeState = this.handleChangeState.bind(this);
+        this.handleChangeCountry = this.handleChangeCountry.bind(this);
     }
 
     handleChangeLine1(e){
@@ -28,25 +32,25 @@ class FormInputsStateful extends React.Component {
             <>
             <div className="form-group row">
                 <label >Line 1</label>
-                <input type="text" className="form-control form-control-sm" onChange={e => this.handleChangeLine1(e)} value={this.state.line1} />
+                <input type="text" className="form-control form-control-sm" onChange={this.handleChangeLine1} value={this.state.line1} />
             </div>
         
              <div className="form-group row">
                 <label >Line 2</label>
-                <input type="text" className="form-control form-control-sm" onChange={e => this.handleChangeLine2(e)}  value={this.state.line2} />
+                <input type="text" className="form-control form-control-sm" onChange={this.handleChangeLine2}  value={this.state.line2} />
             </div>
             
              <div className="form-group row">
                 <label >Postal Code</label>
-                <input type="text" className="form-control form-control-sm" onChange={e => this.handleChangePostalCode(e)}  value={this.state.postalCode} />
+                <input type="text" className="form-control form-control-sm" onChange={this.handleChangePostalCode}  value={this.state.postalCode} />
             </div>
              <div className="form-group row">
                 <label >State </label>
-                <input type="text" className="form-control form-control-sm" onChange={e => this.handleChangeState(e)}  value={this.state.StateCode} />
+                <input type="text" className="form-control form-control-sm" onChange={this.handleChangeState}  value={this.state.StateCode} />
             </div>
              <div className="form-group row">
                 <label >Country</label>
-                <input type="text" className="form-control form-control-sm" onChange={e => this.handleChangeCountry(e)}  value={this.state.CountryCode} />
+                <input type="text" className="form-control form-control-sm" onChange={this.handleChangeCountry}  value={this.state.CountryCode} />
             </div>
             </>
         )

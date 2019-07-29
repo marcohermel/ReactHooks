@@ -2,11 +2,11 @@ import React from 'react'
 import useCustomInput from '../common/useCustomInput'
 
 export default function FormHooks() {
-    let line1 = useCustomInput();  
-    let line2 = useCustomInput();
-    let postalCode = useCustomInput();   
-    let state = useCustomInput();  
-    let country = useCustomInput();  
+    let line1 = useCustomInput('');  
+    let line2 = useCustomInput('');
+    let postalCode = useCustomInput('');   
+    let state = useCustomInput('');  
+    let country = useCustomInput('');  
     return (
         <>
         <div className="form-group row">
