@@ -38,3 +38,10 @@
 .divider {
   border-bottom: 1px dashed #333;
 }
+
+.divBorder{
+  text-align: left;
+  margin: 5px;
+  padding: 5px;
+  border: 1px dashed #333;
+}
