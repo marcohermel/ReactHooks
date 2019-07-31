@@ -11,13 +11,6 @@ class FormStateful extends React.Component {
         this.setState({ name: e.target.value });
     }
 
-    componentDidMount(){
-        document.title = this.state.name;
-    }
-    componentDidUpdate(){
-        document.title = this.state.name;
-    }
-
     render() {
         return (
             <div className="form-group row">

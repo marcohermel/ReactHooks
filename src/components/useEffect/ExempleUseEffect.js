@@ -1,47 +1,23 @@
-import React, { useEffect, useState } from 'react'
-import useCustomInput from '../common/useCustomInput'
+import React, { useState, useEffect } from "react";
 
 export default function ExempleUseEffect() {
-    let line1 = useCustomInput('');
-    let line2 = useCustomInput('');
-    let postalCode = useCustomInput('');
-    let state = useCustomInput('');
-    let country = useCustomInput('');
-   let [isValid, setIsValid] = useState(true);
+    const [name, setName] = useState("Marco");
+    const [age, setAge] = useState(29);
 
-    useEffect(() => {
-        let flag = true;
-        let fields = [line1, line2, postalCode, state, country];
-        fields.map(field => {
-           if (field.value.length === 0) flag = false;
-        });
-
-        setIsValid(flag);
-    }, [line1])
+    useEffect(
+        () => {
+            localStorage.setItem("stateless name", name);
+            localStorage.setItem("stateless age", age);
+        },
+        [name, age]
+    );
 
     return (
-        <>
-            <h2>{isValid ? "Valid" : "Invalid"}</h2>
-            <div className="form-group row">
-                <label >Line 1</label>
-                <input  {...line1} />
-            </div>
-            <div className="form-group row">
-                <label >Line 2</label>
-                <input {...line2} />
-            </div>
-            <div className="form-group row">
-                <label >Postal Code</label>
-                <input {...postalCode} />
-            </div>
-            <div className="form-group row">
-                <label >State </label>
-                <input {...state} />
-            </div>
-            <div className="form-group row">
-                <label >Country</label>
-                <input  {...country} />
-            </div>
-        </>
-    )
+        <form className="form-inline mb-4">
+            <label>Name: </label>
+            <input type="text" className="form-control form-control-sm ml-2 mr-2" onChange={e => setName(e.target.value)} value={name} />
+            <label>Age: </label>
+            <input type="number" className="form-control form-control-sm ml-2 mr-2" onChange={e => setAge(e.target.value)} value={age} />
+        </form>
+    );
 }

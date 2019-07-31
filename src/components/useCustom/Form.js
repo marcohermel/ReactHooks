@@ -8,7 +8,6 @@ class FormInputsStateful extends React.Component {
         this.handleChangeLine2 = this.handleChangeLine2.bind(this);
         this.handleChangePostalCode = this.handleChangePostalCode.bind(this);
         this.handleChangeState = this.handleChangeState.bind(this);
-        this.handleChangeCountry = this.handleChangeCountry.bind(this);
     }
 
     handleChangeLine1(e){
@@ -23,34 +22,28 @@ class FormInputsStateful extends React.Component {
     handleChangeState(e){
         this.setState({...this.state, StateCode: e.target.value });
     }
-    handleChangeCountry(e){
-        this.setState({...this.state, CountryCode: e.target.value });
-    }
+
 
     render() {
         return (
             <>
-            <div className="form-group row">
+            <div className="form-group">
                 <label >Line 1</label>
                 <input type="text" className="form-control form-control-sm" onChange={this.handleChangeLine1} value={this.state.line1} />
             </div>
         
-             <div className="form-group row">
+             <div className="form-group">
                 <label >Line 2</label>
                 <input type="text" className="form-control form-control-sm" onChange={this.handleChangeLine2}  value={this.state.line2} />
             </div>
             
-             <div className="form-group row">
+             <div className="form-group">
                 <label >Postal Code</label>
                 <input type="text" className="form-control form-control-sm" onChange={this.handleChangePostalCode}  value={this.state.postalCode} />
             </div>
-             <div className="form-group row">
+             <div className="form-group">
                 <label >State </label>
                 <input type="text" className="form-control form-control-sm" onChange={this.handleChangeState}  value={this.state.StateCode} />
-            </div>
-             <div className="form-group row">
-                <label >Country</label>
-                <input type="text" className="form-control form-control-sm" onChange={this.handleChangeCountry}  value={this.state.CountryCode} />
             </div>
             </>
         )

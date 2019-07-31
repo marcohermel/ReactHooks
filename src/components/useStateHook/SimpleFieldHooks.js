@@ -1,11 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 export default function SimpleFieldHooks() {
-   let [statePessoa, setPessoa] = useState({ name: "Marco" })
-
-   useEffect(() => {
-      document.title = statePessoa.name;
-   })
+   let [statePessoa, setPessoa] = useState({ name: "Marco"})
 
    return (
       <div className="form-group row">

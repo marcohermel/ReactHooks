@@ -14,10 +14,10 @@ import ExempleUseEffect from './components/useEffect/ExempleUseEffect';
 function App() {
   return (
     <div className="App container">
-      {/* <Divider title="useState" left={ <SimpleField />} right={<SimpleFieldHooks />} /> */}
-      {/* <Divider title="useCustom" left={ <Form />}  right={<FormHooks />}/> */}
+      <Divider title="useState" left={<SimpleField />} right={<SimpleFieldHooks />} />
       <Divider title="useEffect" left={<ExempleLifeCycles />} right={<ExempleUseEffect />} />
-      {/* <Divider title="useReducer" left={ <ReduxExemple />} right={<ReduxExempleHooks/>} /> */}
+      <Divider title="useCustom" left={<Form />} right={<FormHooks />} />
+      <Divider title="useReducer" left={<ReduxExemple />} right={<ReduxExempleHooks />} />
     </div>
   );
 }
