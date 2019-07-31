@@ -9,11 +9,13 @@ import ReduxExemple from './components/ReduxHooks/NormalRedux/ReduxExemple';
 import ReduxExempleHooks from './components/ReduxHooks/HooksRedux/ReduxExempleHooks';
 import ExempleLifeCycles from './components/useEffect/ExempleLifeCycles';
 import ExempleUseEffect from './components/useEffect/ExempleUseEffect';
+import JumbotronRules from './JumbotronRules';
 
 
 function App() {
   return (
     <div className="App container">
+      <JumbotronRules />
       <Divider title="useState" left={<SimpleField />} right={<SimpleFieldHooks />} />
       <Divider title="useEffect" left={<ExempleLifeCycles />} right={<ExempleUseEffect />} />
       <Divider title="useCustom" left={<Form />} right={<FormHooks />} />
